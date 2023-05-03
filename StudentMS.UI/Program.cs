@@ -30,7 +30,6 @@ namespace StudentMS.UI
             Console.WriteLine();
             Console.WriteLine("Anzahl der Schüler:" + students.Count + "\n");
             Console.WriteLine("Durchschnitt Anzahl der Schüler pro Klasse: " + allStudents / countOfClasses);
-            Console.Read();
         }
     }
 }
