@@ -1,32 +1,18 @@
-﻿using StudentMS.Models;
+﻿using System.Xml;
+using System.Xml.Serialization;
+using StudentMS.Models;
 
 namespace StudentMS.IO
 {
     public class CsvLoader
     {
-        public List<Student> ReadFile(string path)
+        public void ReadFile(string path)
         {
-            var csvLines = File.ReadLines(path).ToList();
-            return ConvertLines(csvLines);
-        }
 
-        private List<Student> ConvertLines(List<string> csvLines)
-        {
-            var studens = new List<Student>();
-            foreach (var csvLine in csvLines.Skip(1))
-            {
-                var splitetLine = csvLine.Split(';');
+            XmlSerializer serializer = new XmlSerializer(typeof(Student));
+            Student? sultingMessage = (Student)serializer.Deserialize(new XmlTextReader(path));
 
-                studens.Add(new Student
-                {
-                    SchoolClass = splitetLine[0],
-                    FirstName = splitetLine[1],
-                    LastName = splitetLine[2],
-                    Email = splitetLine[1] + splitetLine[2]+"@mail.at"
-                });
-            }
 
-            return studens;
         }
     }
 }
