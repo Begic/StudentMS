@@ -1,4 +1,5 @@
-﻿using StudentMS.Models;
+﻿using System.Text;
+using StudentMS.Models;
 
 namespace StudentMS.IO
 {
@@ -6,7 +7,7 @@ namespace StudentMS.IO
     {
         public List<Student> ReadFile(string path)
         {
-            var csvLines = File.ReadLines(path).ToList();
+            var csvLines = File.ReadLines(path, Encoding.UTF32).ToList();
             return ConvertLines(csvLines);
         }
 
