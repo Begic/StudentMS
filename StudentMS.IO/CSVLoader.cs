@@ -7,7 +7,7 @@ namespace StudentMS.IO
     {
         public List<Student> ReadFile(string path)
         {
-            var csvLines = File.ReadLines(path, Encoding.UTF32).ToList();
+            var csvLines = File.ReadLines(path, Encoding.UTF7).ToList();
             return ConvertLines(csvLines);
         }
 
