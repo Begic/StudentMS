@@ -12,7 +12,10 @@ namespace StudentMS.UI
             var csvLoader = new CsvLoader();
             var result = csvLoader.ReadFile(path);
 
-            DisplayStundents(result);
+            //DisplayStundents(result);
+
+            var csvToXmlConverter = new CsvToXmlConverter();
+            csvToXmlConverter.Convert(result);
         }
 
         private static void DisplayStundents(List<Student> students)

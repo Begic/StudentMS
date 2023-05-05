@@ -1,5 +1,6 @@
 ﻿namespace StudentMS.Models
 {
+    [Serializable]
     public class Student
     {
         public string FirstName { get; set; }
