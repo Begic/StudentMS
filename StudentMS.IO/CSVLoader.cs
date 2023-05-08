@@ -13,12 +13,12 @@ namespace StudentMS.IO
 
         private List<Student> ConvertLines(List<string> csvLines)
         {
-            var studens = new List<Student>();
+            var students = new List<Student>();
             foreach (var csvLine in csvLines.Skip(1))
             {
                 var splitetLine = csvLine.Split(';');
 
-                studens.Add(new Student
+                students.Add(new Student
                 {
                     SchoolClass = splitetLine[0],
                     FirstName = splitetLine[1],
@@ -27,7 +27,7 @@ namespace StudentMS.IO
                 });
             }
 
-            return studens;
+            return students;
         }
     }
 }

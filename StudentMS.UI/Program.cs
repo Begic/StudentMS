@@ -7,10 +7,11 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var path = $"C:\\Users\\begic\\Desktop\\SchuelerListe.CSV";
+        //Dateipfade der jeweiligen Dateien
 
-        var xmlPath = @"C:\Users\begic\Desktop\student.xml";
-        var jsonPath = @"C:\Users\begic\Desktop\student.json";
+        var path = $"C:\\Users\\begic.SOFTWARE\\Desktop\\SchuelerListe.CSV";
+        var xmlPath = @"C:\Users\begic.SOFTWARE\Desktop\student.xml";
+        var jsonPath = @"C:\Users\begic.SOFTWARE\Desktop\student.json";
 
         var csvLoader = new CsvLoader();
         var result = csvLoader.ReadFile(path);
